@@ -10,6 +10,12 @@ public class LottoTicket {
 
     private final List<Long> lottoNumbers;
 
+    /**
+     * 여기도 arg로 아래를 받기때문에
+     * @param lottoNumbers
+     * validate를 피해갈수없으며,
+     * 코드에 종속되게된다.
+     */
     public LottoTicket(List<Long> lottoNumbers) {
         validateSize(lottoNumbers);
         validateDuplicate(lottoNumbers);

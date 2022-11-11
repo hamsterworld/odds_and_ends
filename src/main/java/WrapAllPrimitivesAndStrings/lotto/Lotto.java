@@ -1,29 +1,25 @@
-package firstcollection;
+package WrapAllPrimitivesAndStrings.WrapAllPrimitivesAndStrings.lotto;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * 비즈니스에 종속적인 자료구조
- *
- */
-public class LottoService {
-
+public class Lotto {
     private static final int LOTTO_NUMBERS_SIZE = 6;
+    private List<LottoNumber> lottoNumbers;
 
-    /**
-     * 로또복권 List<Long>에는 다음과 같은 문제가 있다.
-     */
-    public void createLottoNumber(){
-        List<Long> lottoNumbers = createNonDuplicateNumbers();
-        validateSize(lottoNumbers);
-        validateDuplicate(lottoNumbers);
-        //이후 로직
+    public Lotto(List<LottoNumber> lottoNumbers) {
+        validateDuplication(lottoNumbers);
+        validateAmountOfNumbers(lottoNumbers);
+        this.lottoNumbers = lottoNumbers;
     }
 
-    private List<Long> createNonDuplicateNumbers() {
-        return null;
+    private void validateAmountOfNumbers(List<LottoNumber> lottoNumbers) {
+        System.out.println("대충 로직 검증하는 곳");
+    }
+
+    private void validateDuplication(List<LottoNumber> lottoNumbers) {
+        System.out.println("대충 로직 검증하는 곳");
     }
 
     private void validateSize(List<Long> lottoNumbers){
