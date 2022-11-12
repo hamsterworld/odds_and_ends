@@ -1,5 +1,6 @@
 package firstcollection.Thirdadvantage;
 
-public enum PayEnterpriseStatus {
+public enum PayType {
     NAVER_PAY,KAKAO_PAY,TOSS
+
 }

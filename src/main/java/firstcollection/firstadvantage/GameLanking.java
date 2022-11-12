@@ -1,4 +1,4 @@
-package firstcollection;
+package firstcollection.firstadvantage;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package WrapAllPrimitivesAndStrings.WrapAllPrimitivesAndStrings.score;
+package WrapAllPrimitivesAndStrings.score;
 
 public class Score {
 

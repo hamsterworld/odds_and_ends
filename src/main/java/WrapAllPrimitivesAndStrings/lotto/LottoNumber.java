@@ -1,4 +1,4 @@
-package WrapAllPrimitivesAndStrings.WrapAllPrimitivesAndStrings.lotto;
+package WrapAllPrimitivesAndStrings.lotto;
 
 import java.util.HashMap;
 import java.util.Map;

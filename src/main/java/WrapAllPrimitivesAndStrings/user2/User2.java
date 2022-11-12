@@ -1,4 +1,4 @@
-package WrapAllPrimitivesAndStrings.WrapAllPrimitivesAndStrings.user2;
+package WrapAllPrimitivesAndStrings.user2;
 
 public class User2 {
 

@@ -1,4 +1,4 @@
-package WrapAllPrimitivesAndStrings.WrapAllPrimitivesAndStrings.lotto;
+package WrapAllPrimitivesAndStrings.lotto;
 
 public class WinningLotto {
     private static final String BONUS_CANNOT_BE_DUPLICATE_WITH_WINNING_NUMBER = "보너스 번호도 1 - 45만 가능합니다.";

@@ -1,9 +1,7 @@
-package firstcollection;
+package firstcollection.firstadvantage;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * 종속에서 벗어난 구조

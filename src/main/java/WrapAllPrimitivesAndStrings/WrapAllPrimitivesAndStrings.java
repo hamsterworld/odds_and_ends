@@ -1,6 +1,6 @@
-package WrapAllPrimitivesAndStrings.WrapAllPrimitivesAndStrings;
+package WrapAllPrimitivesAndStrings;
 
-import WrapAllPrimitivesAndStrings.WrapAllPrimitivesAndStrings.user.Age;
+import WrapAllPrimitivesAndStrings.user.Age;
 
 public class WrapAllPrimitivesAndStrings {
 
