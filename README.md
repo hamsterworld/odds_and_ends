@@ -7,4 +7,4 @@
     - 1등급collection이란?
     - 원시타입과 string을 감싸자.
     - enum에 대해서 제대로 알아보자.
-    ...
+    - java의 antipattern에대해서 알아보자.
