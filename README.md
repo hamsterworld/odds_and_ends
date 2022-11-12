@@ -1,4 +1,4 @@
-# oddsandends
+# odds_and_ends
 
 ## 잡동사니
 
