@@ -1,8 +1,5 @@
 package firstcollection.secondadvantage;
 
-
-import lombok.ToString;
-
 import java.util.List;
 
 /**
