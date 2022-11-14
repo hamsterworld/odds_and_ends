@@ -1,7 +1,6 @@
 package stream.toMap;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -37,7 +36,7 @@ class BookTest {
     @DisplayName("만약에 중복 키로 인한 예외발생")
     void ListToMap2(){
 
-        Map<Integer, Book> bookMap = bookList.stream()
+        bookList.stream()
                 .collect(Collectors.toMap(Book::getReleaseYear, Function.identity()));
 
         System.out.println("예외가 터진다. IllegalStateException.");

@@ -5,6 +5,11 @@ import java.util.List;
 
 public class OrderCreateService {
 
+    public ClientOrders createListOrder(){
+        ClientOrders clientOrders = new ClientOrders(orderCreated());
+        return clientOrders;
+    }
+
     public List<Order> orderCreated(){
         List<Order> orderList = new ArrayList<>();
         orderList.add(new Order(1L,"오인석","Hamster Feed"));
@@ -13,9 +18,5 @@ public class OrderCreateService {
         return orderList;
     }
 
-    public ClientOrders createListOrder(){
-        ClientOrders clientOrders = new ClientOrders(orderCreated());
-        return clientOrders;
-    }
 
 }
