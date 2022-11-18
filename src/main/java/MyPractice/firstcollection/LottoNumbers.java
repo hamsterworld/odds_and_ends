@@ -1,7 +1,6 @@
 package MyPractice.firstcollection;
 
 import lombok.Getter;
-import lombok.ToString;
 
 import java.util.HashSet;
 import java.util.List;
