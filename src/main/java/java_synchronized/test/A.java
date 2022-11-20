@@ -4,11 +4,9 @@ public class A extends Thread{
 
     Object o = new Object();
 
-    public void run(String msg) {
-        synchronized (o){
+    public synchronized void run(String msg) {
             System.out.println(msg + "lock");
             System.out.println(msg + "unlock");
-        }
     }
 
 }

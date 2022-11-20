@@ -30,7 +30,7 @@ package java_synchronized;
 public class basic_synchronized7 {
 
     Object o = new Object(); //이것도 나중에좀보자 static 영역에서 heap 이 생성되네 new 를 어떻게 쓰는거지?
-
+    Object o1 = new Object();
     public static void main(String[] args) {
 
         basic_synchronized7 bs = new basic_synchronized7();
@@ -51,7 +51,7 @@ public class basic_synchronized7 {
             System.out.println("스레드2이 실행됩니다.");
             while(account.balance > 0){
                 int money = (int)(Math.random() * 3 + 1) * 100;
-                account.withdraw(money,"쓰레드2");
+                account.withdraw1(money,"쓰레드2");
                 System.out.println("balance2: " +account.getBalance());
             }
             System.out.println("스레드2이 종료됩니다.");
@@ -92,14 +92,21 @@ public class basic_synchronized7 {
             }
         }
 
-        public void print(String msg)  {
-                System.out.println("print print" + msg);
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+        public void withdraw1(int money,String msg){
+            synchronized (o1){
+                if(balance >= money){
+                    try{
+                        Thread.sleep(1000);
+                        System.out.println("b lock 전에 " + msg );
+                    } catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                    System.out.println(msg+"이 돈빼는중");
+                    balance -= money;
                 }
+            }
         }
+
 
     }
 

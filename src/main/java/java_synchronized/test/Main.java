@@ -13,7 +13,7 @@ public class Main {
         new Thread(() -> {
             System.out.println("스레드2이 실행됩니다.");
             int i =0;
-            while(i < 10){
+            while(i < 5){
                 i++;
                 a.run("쓰레드2");
 
@@ -24,7 +24,7 @@ public class Main {
         new Thread(() -> {
             System.out.println("스레드1이 실행됩니다.");
             int i =0;
-            while(i < 10){
+            while(i < 5){
                 i++;
                 a.run("쓰레드1");
 
