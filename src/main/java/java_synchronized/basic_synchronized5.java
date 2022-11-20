@@ -1,70 +1,53 @@
 package java_synchronized;
 
-import java.time.LocalDateTime;
-import java.util.concurrent.TimeUnit;
 
+/**
+ * 인스턴스가 달라지면 걸리는 lock 도 당연히 달라진다.
+ */
 public class basic_synchronized5 {
-
 
     public static void main(String[] args) {
 
         basic_synchronized5 bs = new basic_synchronized5();
+        Account account = bs.new Account();
+        Account account1 = bs.new Account();
 
+        new Thread(() -> {
+            System.out.println("스레드1이 실행됩니다.");
+            int i =0;
+            while(i < 4){
+                i++;
+                account.print("쓰레드1");
+            }
+            System.out.println("스레드1이 종료됩니다.");
+        }).start();
 
-        Thread thread1 = new Thread(() -> {
-            System.out.println("스레드1 시작 " + LocalDateTime.now());
-            bs.syncBlockMethod1("스레드1");
-            System.out.println("스레드1 종료 " + LocalDateTime.now());
-        });
-
-        Thread thread2 = new Thread(() -> {
-            System.out.println("스레드2 시작 " + LocalDateTime.now());
-            bs.syncBlockMethod2("스레드2");
-            System.out.println("스레드2 종료 " + LocalDateTime.now());
-        });
-
-        thread1.start();
-        thread2.start();
+        new Thread(() -> {
+            System.out.println("스레드2이 실행됩니다.");
+            int i =0;
+            while(i < 4){
+                i++;
+                account1.print("쓰레드2");
+            }
+            System.out.println("스레드2이 종료됩니다.");
+        }).start();
 
     }
 
-    private synchronized void syncBlockMethod1(String msg) {
-
-        System.out.println("여기선 나도 자유롭지 못해 1");
-
-        int i = 0;
-        while(i < 5){
-            System.out.println("method1 중간에 끼여드나요?1");
-            System.out.println("method1 중간에 끼여드나요?2");
-            System.out.println("method1 중간에 끼여드나요?3");
-            System.out.println("method1 중간에 끼여드나요?4");
-            i++;
-            System.out.println(msg + "의 syncBlockMethod1 실행중" + LocalDateTime.now());
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+    public class Account {
+        public void print(String msg){
+            synchronized (this){
+                System.out.println(msg + "lock");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(msg + "unlock");
             }
         }
+
     }
 
-    private synchronized void syncBlockMethod2(String msg) {
 
-        System.out.println("여기선 나도 자유롭지 못해 2");
-
-        int i = 0;
-        while(i < 5){
-            System.out.println("method2 중간에 끼여드나요?1");
-            System.out.println("method2 중간에 끼여드나요?2");
-            System.out.println("method2 중간에 끼여드나요?3");
-            System.out.println("method2 중간에 끼여드나요?4");
-            i++;
-            System.out.println(msg + "의 syncBlockMethod2 실행중" + LocalDateTime.now());
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        }
 }

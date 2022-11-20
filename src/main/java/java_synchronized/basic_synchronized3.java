@@ -76,7 +76,7 @@ public class basic_synchronized3 {
             }
         }
 
-        public synchronized void withdraw3(int money,String msg){
+        public void withdraw3(int money,String msg){
             if(balance >= money){
                 try{
                     Thread.sleep(1000);
