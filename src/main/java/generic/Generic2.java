@@ -79,8 +79,6 @@ public class Generic2 {
         test4 test4 = generic2.new test4();
         test4.test(list,comp);
 
-
-
     }
 
 
