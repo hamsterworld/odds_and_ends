@@ -6,19 +6,19 @@ import java.util.Set;
 
 public class Lotto {
     private static final int LOTTO_NUMBERS_SIZE = 6;
-    private List<LottoNumber> lottoNumbers;
+    private List<WrapAllPrimitivesAndStrings.lotto.LottoNumber> lottoNumbers;
 
-    public Lotto(List<LottoNumber> lottoNumbers) {
+    public Lotto(List<WrapAllPrimitivesAndStrings.lotto.LottoNumber> lottoNumbers) {
         validateDuplication(lottoNumbers);
         validateAmountOfNumbers(lottoNumbers);
         this.lottoNumbers = lottoNumbers;
     }
 
-    private void validateAmountOfNumbers(List<LottoNumber> lottoNumbers) {
+    private void validateAmountOfNumbers(List<WrapAllPrimitivesAndStrings.lotto.LottoNumber> lottoNumbers) {
         System.out.println("대충 로직 검증하는 곳");
     }
 
-    private void validateDuplication(List<LottoNumber> lottoNumbers) {
+    private void validateDuplication(List<WrapAllPrimitivesAndStrings.lotto.LottoNumber> lottoNumbers) {
         System.out.println("대충 로직 검증하는 곳");
     }
 

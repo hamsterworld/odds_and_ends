@@ -2,7 +2,7 @@ package WrapAllPrimitivesAndStrings.lotto;
 
 public class WinningLotto {
     private static final String BONUS_CANNOT_BE_DUPLICATE_WITH_WINNING_NUMBER = "보너스 번호도 1 - 45만 가능합니다.";
-    private Lotto winningLottoNumbers;
+    private WrapAllPrimitivesAndStrings.lotto.Lotto winningLottoNumbers;
 
     private int bonusNumber;
 
@@ -18,7 +18,7 @@ public class WinningLotto {
      * 이제는 bounsnumber만 변경해주면된다.
      */
                                                         //여기가 변경점
-    public void WinningNumber(Lotto winningLottoNumbers, int bonusNumber) {
+    public void WinningNumber(WrapAllPrimitivesAndStrings.lotto.Lotto winningLottoNumbers, int bonusNumber) {
         this.winningLottoNumbers = winningLottoNumbers;
         if (isBonusNumberDuplicatedWithWinningNumber(winningLottoNumbers, bonusNumber)) {
             throw new IllegalArgumentException(
@@ -40,7 +40,7 @@ public class WinningLotto {
 //        this.bonusNumber = bonusNumber;
 //    }
 
-    private boolean isBonusNumberDuplicatedWithWinningNumber(Lotto winningLottoNumbers, int bonusNumber) {
+    private boolean isBonusNumberDuplicatedWithWinningNumber(WrapAllPrimitivesAndStrings.lotto.Lotto winningLottoNumbers, int bonusNumber) {
         System.out.println("대충 로직 검증하는곳");
         return true;
     }
