@@ -27,5 +27,6 @@ IntelliJ 또는 Eclipse 통합 개발 도구에서 formatting을 한다.
 예를 들어 location.current.representation.substring(0, 1)와 같이 여러 개의 점(.)이 등장하면 리팩토링할 부분을 찾아본다.
 
 - 메소드가 한가지 일만 담당하도록 구현했는가?
+    -> 함수이름은 길어도 좋다 다만 직관적으로 알아볼수있게 작성해라.
 
 - 클래스를 작게 유지하기 위해 노력했는가?

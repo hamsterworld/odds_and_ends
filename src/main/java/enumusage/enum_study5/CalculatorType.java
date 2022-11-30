@@ -23,4 +23,9 @@ public enum CalculatorType {
         return expression.apply(value);
     }
 
+    public static void main(String[] args) {
+        CalculatorType calA = CalculatorType.CAL_A;
+
+    }
+
 }

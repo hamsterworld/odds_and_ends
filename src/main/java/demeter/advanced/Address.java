@@ -12,4 +12,5 @@ public class Address {
     public boolean isSeoul() {
         return "서울".equals(region);
     }
+
 }

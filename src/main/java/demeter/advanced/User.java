@@ -15,4 +15,5 @@ public class User {
     public boolean isSeoulUser() {
         return address.isSeoul();
     }
+
 }

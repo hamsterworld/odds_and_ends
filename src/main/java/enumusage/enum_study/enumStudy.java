@@ -3,7 +3,6 @@ package enumusage.enum_study;
 /**
  * enum은 언제?
  * 1.연관된 상수를 사용하고싶을때
- * 2.
  */
 public class enumStudy {
 
