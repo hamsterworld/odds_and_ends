@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 /**
  * collision 충돌이란?
+ *
  * 1.key 의 가지수는 무한데지만 hashcode 는 key에 가지수에비하면 유한하다.
  * 그래서 다른 key 값이여도 같은 hashcode 가 생길수있다.
  *

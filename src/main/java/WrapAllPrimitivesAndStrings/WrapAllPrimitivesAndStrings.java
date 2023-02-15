@@ -11,7 +11,7 @@ public class WrapAllPrimitivesAndStrings {
 
     /**
      * 이렇게 원시값을 포장함으로써 얻을 수 있는 이점이 도대체 무엇인가?
-     * User code로 가보자.
+     * User code 로 가보자.
      */
 
 }
