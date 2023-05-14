@@ -20,8 +20,7 @@ import java.util.concurrent.Executors;
  * 임시변수를 질의함수로 바꾸기
  * 말이 어려운데
  * 그냥 밑에서 바꿔준 rate 같이 계산해준것을
- * 함수로 뺀다는것.
- *
+ * -> 함수로 뺀다는것.
  */
 public class StudyDashboard {
 
@@ -95,8 +94,7 @@ public class StudyDashboard {
                 .filter(v -> v == true)
                 .count();
         // 참석율계산
-        double rate = count * 100 / totalNumberOfEvents;
-        return rate;
+        return (double) (count * 100 / totalNumberOfEvents);
     }
 
     private String getMarkDownForParticipant(int totalNumberOfEvents, Participant p) {

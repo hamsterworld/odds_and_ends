@@ -16,13 +16,32 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- *
  * 매개변수 객체 만들기
+ *
+ * 같은 매개변수들이 여러매소드에 걸쳐 나타난다면 그 매개변수들을 묶은 자료구조를 만들수있다.
+ *
+ * 이런것들을 만들면 좋은점?
+ * 1. 해당 데이터간의 관계를 보다 명시적으로 나타낼수있다.
+ * 2. 함수에 전달한 매개변수 개수를 줄일수있다.
+ * 3. 도메인을 이해하는데 중요한 역할을 하는 클래스로 발전할수도있다.
+ *
+ *
+ * 예시에서 2가지가 동시에 쓰여서 헷갈릴수있는데
+ * 1. 말그대로 같이쓰이는 애들은 하나의 객체로묶어서 표현할수도있다.
+ * 2. 아니면 field 로 빼서 사용할수도있다.
+ *
+ * 이렇게 2가지방법으로 매개변수의 수를 줄일수있다.
  */
 public class StudyDashboard {
 
+    private int totalNumberOfEvents;
+
+    public StudyDashboard(int totalNumberOfEvents) {
+        this.totalNumberOfEvents = totalNumberOfEvents;
+    }
+
     public static void main(String[] args) throws IOException, InterruptedException {
-        StudyDashboard studyDashboard = new StudyDashboard();
+        StudyDashboard studyDashboard = new StudyDashboard(15);
         studyDashboard.print();
     }
 
@@ -31,7 +50,6 @@ public class StudyDashboard {
         GHRepository repository = gitHub.getRepository("whiteship/live-study");
         List<Participant> participants = new CopyOnWriteArrayList<>();
 
-        int totalNumberOfEvents = 15;
         ExecutorService service = Executors.newFixedThreadPool(8);
         CountDownLatch latch = new CountDownLatch(totalNumberOfEvents);
 
@@ -76,7 +94,7 @@ public class StudyDashboard {
             writer.print(header(totalNumberOfEvents, participants.size()));
 
             participants.forEach(p -> {
-                String markdownForHomework = getMarkdownForParticipant(totalNumberOfEvents, p);
+                String markdownForHomework = getMarkdownForParticipant(new ParticipantsPrinter(totalNumberOfEvents,p));
                 writer.print(markdownForHomework);
             });
         }
@@ -90,8 +108,9 @@ public class StudyDashboard {
         return rate;
     }
 
-    private String getMarkdownForParticipant(int totalNumberOfEvents, Participant p) {
-        return String.format("| %s %s | %.2f%% |\n", p.username(), checkMark(p, totalNumberOfEvents), getRate(totalNumberOfEvents, p));
+    // int totalNumberOfEvents, Participant p 애네가 자주사용되므로 애네를 묶어보자.
+    private String getMarkdownForParticipant(ParticipantsPrinter participantsPrinter) {
+        return String.format("| %s %s | %.2f%% |\n", participantsPrinter.p().username(), checkMark(participantsPrinter.p(), participantsPrinter.totalNumberOfEvents()), getRate(participantsPrinter.totalNumberOfEvents(), participantsPrinter.p()));
     }
 
     /**

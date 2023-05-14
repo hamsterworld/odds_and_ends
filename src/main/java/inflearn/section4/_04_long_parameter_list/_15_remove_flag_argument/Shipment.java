@@ -11,6 +11,8 @@ import java.time.LocalDate;
  * bookConcert(customer),premiumBookConcert(customer) => 아 하나는 그냥티켓 하나는 프리미엄티켓이구나.
  *
  * 조건문 분해하기 (Decompose Condition)를 활용할수있다.
+ *
+ * 결국에는 flag 가 뭘의미하는지 알수있게 한다.
  */
 public class Shipment {
 

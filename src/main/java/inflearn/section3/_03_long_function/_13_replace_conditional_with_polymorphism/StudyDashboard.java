@@ -12,6 +12,12 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * 조건문을 다형성으로 바꾸기
+ *
+ * 모든 조건문을 다형성으로 바꿔야 하는 것은 아니다.
+ *
+ */
 public class StudyDashboard {
 
     private final int totalNumberOfEvents;
@@ -29,7 +35,16 @@ public class StudyDashboard {
 
     private void print() throws IOException, InterruptedException {
         checkGithubIssues(getGhRepository());
-        new StudyPrinter(this.totalNumberOfEvents, this.participants, PrinterMode.MARKDOWN).execute();
+        // 아래가
+//        new StudyPrinter(this.totalNumberOfEvents, this.participants, PrinterMode.MARKDOWN).execute();
+
+        // 이놈처럼 변경되었다.
+        // 정적팩토리매서드로 해줘도괜찮다.
+        // 물론 정적패토리매서드안에서는 switch 문이 들어가겟지만
+        // 아래방식도 나쁘지않다.
+        new MarkdownPrinter(this.totalNumberOfEvents,this.participants).execute();
+        new ConsolePrinter(this.totalNumberOfEvents,this.participants).execute();
+        new CvsPrinter(this.totalNumberOfEvents,this.participants).execute();
     }
 
     private GHRepository getGhRepository() throws IOException {

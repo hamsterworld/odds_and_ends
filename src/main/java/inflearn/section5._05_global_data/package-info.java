@@ -1,0 +1,1 @@
+package inflearn.section5._05_global_data;

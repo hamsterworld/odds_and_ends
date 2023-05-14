@@ -12,6 +12,8 @@ package inflearn.section4._04_long_parameter_list._14_replace_parameter_with_que
  *
  * 또 리팩토링을 하기위해서는 반드시 테스트코드가있어야한다.
  * 왜냐하면 제대로 기능이 정상적으로 작동되는지 알기위해서이다.
+ *
+ * --> 이것도 결국 함수로 뺀다.
  */
 public class Order {
 
@@ -24,7 +26,15 @@ public class Order {
         this.itemPrice = itemPrice;
     }
 
-    // 호출하는쪽에서 DiscountLevel 을 계산해서 discountedPrice 함수에 넘겨줘야했었다.
+    // 원레
+//    public double finalPrice() {
+//        double basePrice = this.quantity * this.itemPrice;
+//        int discountLevel = this.quantity > 100 ? 2 : 1;
+//        return this.discountedPrice(basePrice, discountLevel);
+//    }
+
+
+    // 호출하는쪽(finalPrice)에서 DiscountLevel 을 계산해서 discountedPrice 함수에 넘겨줘야했었다.
     // 즉, 책임이 컸었다. 그러나 이것을 discountedPrice 에게 책임을 넘겨줌으로써
     // 호출하는 쪽에서 책임도 줄이고 파라미터도 줄일수있었다.
     public double finalPrice() {
