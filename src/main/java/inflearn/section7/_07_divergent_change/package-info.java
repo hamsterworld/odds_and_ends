@@ -1,1 +1,1 @@
-package me.whiteship.refactoring._07_divergent_change;
+package inflearn.section7._07_divergent_change;

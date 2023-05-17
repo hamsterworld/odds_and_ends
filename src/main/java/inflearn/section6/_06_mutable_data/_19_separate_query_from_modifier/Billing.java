@@ -9,6 +9,7 @@ package inflearn.section6._06_mutable_data._19_separate_query_from_modifier;
  *
  * 눈에 띌만한 사이드 이팩트
  * 가령, 캐시는 중요한 객체 상태 변화는 아니다. 따라서 어떤 메소드 호출로 인해, 캐시 데이터를 변경하더라도 분리할필요는 없다.
+ * (하나의 매서드는 하나의 책임만을 지어야한다랑 비슷한 문맥인듯)
  */
 public class Billing {
 

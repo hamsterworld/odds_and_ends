@@ -105,8 +105,8 @@ public class StudyDashboard {
 
     private String getMarkdownForParticipant(Participant participant) {
         return String.format("| %s %s | %.2f%% |\n", participant.username(), checkMark(participant, this.totalNumberOfEvents),
-                //getRate(participant));
-                //아래처럼 이렇게 변경해주면
+                // getRate(participant));
+                // 아래처럼 이렇게 변경해주면
                 // 해당객체는 getRate 매서드를 가지고있게되고
                 // 해당객체도 점점더 커질수있다.
                 // 그리고 똑같이 고민해봐야한다 getRate 를 가지고있는게 맞는가?등등

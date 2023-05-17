@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 
 /**
  * 조건문 분해하기
- * -> 조건문 내부구현을 함수로 빼기
+ * -> 조건문 내부구현을 함수로 빼기 (이것도 사실상 함수 추출하기다.)
  * -> 근데 이렇게 함수로 빼면 삼항연산이 보이기도하는것처럼 좀더 간편하게 만들수있다.
  */
 public class StudyDashboard {

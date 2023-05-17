@@ -34,7 +34,7 @@ import java.util.concurrent.Executors;
  */
 public class StudyDashboard {
 
-    private int totalNumberOfEvents;
+    private final int totalNumberOfEvents;
 
     public StudyDashboard(int totalNumberOfEvents) {
         this.totalNumberOfEvents = totalNumberOfEvents;
@@ -100,17 +100,16 @@ public class StudyDashboard {
         }
     }
 
-    private double getRate(int totalNumberOfEvents, Participant p) {
-        long count = p.homework().values().stream()
-                .filter(v -> v == true)
+    private double getRate(ParticipantsPrinter participantsPrinter) {
+        long count = participantsPrinter.p().homework().values().stream()
+                .filter(v -> v)
                 .count();
-        double rate = count * 100 / totalNumberOfEvents;
-        return rate;
+        return (double) (count * 100 / participantsPrinter.totalNumberOfEvents());
     }
 
     // int totalNumberOfEvents, Participant p 애네가 자주사용되므로 애네를 묶어보자.
     private String getMarkdownForParticipant(ParticipantsPrinter participantsPrinter) {
-        return String.format("| %s %s | %.2f%% |\n", participantsPrinter.p().username(), checkMark(participantsPrinter.p(), participantsPrinter.totalNumberOfEvents()), getRate(participantsPrinter.totalNumberOfEvents(), participantsPrinter.p()));
+        return String.format("| %s %s | %.2f%% |\n", participantsPrinter.p().username(), checkMark(participantsPrinter.p(), participantsPrinter.totalNumberOfEvents()), getRate(participantsPrinter));
     }
 
     /**

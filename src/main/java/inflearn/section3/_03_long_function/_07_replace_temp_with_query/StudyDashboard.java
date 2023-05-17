@@ -18,9 +18,10 @@ import java.util.concurrent.Executors;
 /**
  *
  * 임시변수를 질의함수로 바꾸기
+ *
  * 말이 어려운데
  * 그냥 밑에서 바꿔준 rate 같이 계산해준것을
- * -> 함수로 뺀다는것.
+ * -> 함수로 뺀다는것. (결국 이것도 함수추출이다.)
  */
 public class StudyDashboard {
 

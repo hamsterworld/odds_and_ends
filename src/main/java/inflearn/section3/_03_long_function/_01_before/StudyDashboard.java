@@ -77,7 +77,6 @@ public class StudyDashboard {
                         .filter(v -> v == true)
                         .count();
                 double rate = count * 100 / totalNumberOfEvents;
-
                 String markdownForHomework = String.format("| %s %s | %.2f%% |\n", p.username(), checkMark(p, totalNumberOfEvents), rate);
                 writer.print(markdownForHomework);
             });

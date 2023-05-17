@@ -93,6 +93,7 @@ public class StudyDashboard {
                 writer.print(markdownForHomework);
             });
         }
+
         new StudyPrinter(this.totalNumberOfEvents,participants).print();
     }
 
