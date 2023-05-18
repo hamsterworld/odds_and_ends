@@ -1,0 +1,1 @@
+package inflearn.section15._15_speculative_generality;

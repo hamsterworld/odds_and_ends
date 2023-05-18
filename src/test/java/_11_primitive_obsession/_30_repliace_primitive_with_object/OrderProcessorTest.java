@@ -1,5 +1,7 @@
 package _11_primitive_obsession._30_repliace_primitive_with_object;
 
+import inflearn.section11._11_primitive_obsession._30_repliace_primitive_with_object.Order;
+import inflearn.section11._11_primitive_obsession._30_repliace_primitive_with_object.OrderProcessor;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
