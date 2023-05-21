@@ -29,7 +29,7 @@ public class StudyPrinter {
             participants.sort(Comparator.comparing(Participant::username));
 
             writer.print(header(participants.size()));
-        // 움몸모
+
             participants.forEach(p -> {
                 String markdownForHomework = getMarkdownForParticipant(p);
                 writer.print(markdownForHomework);

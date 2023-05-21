@@ -70,7 +70,7 @@ public class StudyDashboard {
     // 이게바로 조건문 분해하기의 힘이다.
     // 아래 삼항연산자까지보면 내공이 상당한 개발자이다.
     // 또 아래도 반복적인 매개변수가 있다.
-        private Participant findParticipant(String username, List<Participant> participants) {
+    private Participant findParticipant(String username, List<Participant> participants) {
         return isNewParticipants(username, participants) ? createNewParticipant(username, participants) : findExistingParticipant(username, participants);
     }
 
@@ -81,8 +81,7 @@ public class StudyDashboard {
     }
 
     private Participant createNewParticipant(String username, List<Participant> participants) {
-        Participant participant;
-        participant = new Participant(username);
+        Participant participant = new Participant(username);
         participants.add(participant);
         return participant;
     }

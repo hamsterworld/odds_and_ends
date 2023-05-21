@@ -70,19 +70,6 @@ public class StudyDashboard {
                     try {
                         GHIssue issue = ghRepository.getIssue(eventId);
                         List<GHIssueComment> comments = issue.getComments();
-
-                        // 이 loop 를 쪼개보자.
-//                        for (GHIssueComment comment : comments) {
-//                            Participant participant = findParticipant(comment.getUserName(), participants);
-//                            participant.setHomeworkDone(eventId);
-//
-//                            if (firstCreatedAt == null || comment.getCreatedAt().before(firstCreatedAt)) {
-//                                firstCreatedAt = comment.getCreatedAt();
-//                                first = participant;
-//                            }
-//                        }
-
-                        // 아래가 그결과
                         checkHomework(comments, eventId);
                         firstParticipantsForEachEvent[eventId - 1] = findFirst(comments, eventId);
                         latch.countDown();

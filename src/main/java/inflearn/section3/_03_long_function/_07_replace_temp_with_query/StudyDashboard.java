@@ -16,12 +16,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- *
  * 임시변수를 질의함수로 바꾸기
  *
  * 말이 어려운데
  * 그냥 밑에서 바꿔준 rate 같이 계산해준것을
  * -> 함수로 뺀다는것. (결국 이것도 함수추출이다.)
+ *
  */
 public class StudyDashboard {
 
@@ -31,6 +31,7 @@ public class StudyDashboard {
     }
 
     private void print() throws IOException, InterruptedException {
+
         GitHub gitHub = GitHub.connect();
         GHRepository repository = gitHub.getRepository("whiteship/live-study");
         List<Participant> participants = new CopyOnWriteArrayList<>();
@@ -99,8 +100,7 @@ public class StudyDashboard {
     }
 
     private String getMarkDownForParticipant(int totalNumberOfEvents, Participant p) {
-        String markdownForHomework = String.format("| %s %s | %.2f%% |\n", p.username(), checkMark(p, totalNumberOfEvents), getRate(totalNumberOfEvents, p));
-        return markdownForHomework;
+        return String.format("| %s %s | %.2f%% |\n", p.username(), checkMark(p, totalNumberOfEvents), getRate(totalNumberOfEvents, p));
     }
 
     /**

@@ -24,6 +24,15 @@ import java.util.concurrent.Executors;
  * 각 매서드들이 participants 에 의존하는게맞는가?
  * 예를들어) 기존에 있던 Map 같은것들에 의존하는데맞는지 (getRate 같은 매서드)
  * 그리고 이 participants 를 다른 도메인에도 적용할것인지?
+ *
+ * (
+ *  여기서는 이제 getRating 을 계산하는로직이 이제 Participant 에 들어가게된다.
+ *  그리고 이를 통해 넘겨주는 파라미터양도 줄었다.
+ *
+ *  StudyDashboard 에 getRate 를 가지고있는것이 옳은가?
+ *  or
+ *  Participant 에 getRate 를 가지고있는것이 옳은가? (함으로써 일단은 넘겨주려는 파라미터는 줄었다.)
+ *  )
  */
 public class StudyDashboard {
 
@@ -39,6 +48,7 @@ public class StudyDashboard {
     }
 
     private void print() throws IOException, InterruptedException {
+
         GitHub gitHub = GitHub.connect();
         GHRepository repository = gitHub.getRepository("whiteship/live-study");
         List<Participant> participants = new CopyOnWriteArrayList<>();
@@ -96,12 +106,6 @@ public class StudyDashboard {
         }
     }
 
-    double getRate(Participant participant) {
-        long count = participant.homework().values().stream()
-                .filter(v -> v == true)
-                .count();
-        return (double) (count * 100 / this.totalNumberOfEvents);
-    }
 
     private String getMarkdownForParticipant(Participant participant) {
         return String.format("| %s %s | %.2f%% |\n", participant.username(), checkMark(participant, this.totalNumberOfEvents),
@@ -109,7 +113,7 @@ public class StudyDashboard {
                 // 아래처럼 이렇게 변경해주면
                 // 해당객체는 getRate 매서드를 가지고있게되고
                 // 해당객체도 점점더 커질수있다.
-                // 그리고 똑같이 고민해봐야한다 getRate 를 가지고있는게 맞는가?등등
+                // 그리고 똑같이 고민해봐야한다 getRate 를 가지고있는게 맞는가? 등등
                 participant.getRate(this.totalNumberOfEvents));
     }
 

@@ -25,7 +25,6 @@ import java.util.concurrent.Executors;
  * 2. 함수에 전달한 매개변수 개수를 줄일수있다.
  * 3. 도메인을 이해하는데 중요한 역할을 하는 클래스로 발전할수도있다.
  *
- *
  * 예시에서 2가지가 동시에 쓰여서 헷갈릴수있는데
  * 1. 말그대로 같이쓰이는 애들은 하나의 객체로묶어서 표현할수도있다.
  * 2. 아니면 field 로 빼서 사용할수도있다.
@@ -87,8 +86,8 @@ public class StudyDashboard {
         latch.await();
         service.shutdown();
 
-        try (FileWriter fileWriter = new FileWriter("participants.md");
-             PrintWriter writer = new PrintWriter(fileWriter)) {
+        try (FileWriter fileWriter = new FileWriter("participants.md"); PrintWriter writer = new PrintWriter(fileWriter)) {
+
             participants.sort(Comparator.comparing(Participant::username));
 
             writer.print(header(totalNumberOfEvents, participants.size()));
@@ -109,7 +108,8 @@ public class StudyDashboard {
 
     // int totalNumberOfEvents, Participant p 애네가 자주사용되므로 애네를 묶어보자.
     private String getMarkdownForParticipant(ParticipantsPrinter participantsPrinter) {
-        return String.format("| %s %s | %.2f%% |\n", participantsPrinter.p().username(), checkMark(participantsPrinter.p(), participantsPrinter.totalNumberOfEvents()), getRate(participantsPrinter));
+        return String.format("| %s %s | %.2f%% |\n", participantsPrinter.p().username(), checkMark(participantsPrinter.p(), participantsPrinter.totalNumberOfEvents()),
+                getRate(participantsPrinter));
     }
 
     /**
