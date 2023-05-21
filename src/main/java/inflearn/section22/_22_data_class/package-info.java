@@ -1,0 +1,1 @@
+package inflearn.section22._22_data_class;
