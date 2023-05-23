@@ -13,7 +13,6 @@ public class ReadingClient {
     }
 
 
-
     // client3 의 코드로 변경
     protected EnrichReading enrichReading(Reading reading){
         return new EnrichReading(reading,baseCharge(reading),taxableCharge(reading));

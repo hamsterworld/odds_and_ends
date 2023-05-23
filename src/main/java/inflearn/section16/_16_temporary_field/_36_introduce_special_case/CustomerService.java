@@ -2,7 +2,7 @@ package inflearn.section16._16_temporary_field._36_introduce_special_case;
 
 public class CustomerService {
 
-    // 아래의 코드들을 보면 unknown 인 특이케이스가 지속적으로 반복되고있다.
+    // ** 아래의 코드들을 보면 unknown 인 특이케이스가 지속적으로 반복되고있다.
     // 그래서 unknownCustomer Class 를 만들어서 빼주자.
     public String customerName(Site site) {
 //        Customer customer = site.getCustomer();

@@ -29,10 +29,10 @@ public class Order {
     // 원레
 //    public double finalPrice() {
 //        double basePrice = this.quantity * this.itemPrice;
-          // 즉, 내가 discountLevel 이라는 매개변수를 주기위해서는
-          // 호출해주는쪽에서 줘야한다. 그러면 이변수를 만들려면
+          // discountedPrice 라는 함수를 사용하기위해서
+          // 호출해주는쪽에서 discountLevel 매개변수를 줘야한다.
           // 호출하는쪽에서 만들든,다른쪽에서 끌어오든 해야한다.
-          // 그러면 호출하는쪽에서는 책임이 증가하게되는것이다.
+          // 그러면 호출하는쪽에서는 책임이 증가하게되는것이다. (의존성 up)
 //        int discountLevel = this.quantity > 100 ? 2 : 1;
 //        return this.discountedPrice(basePrice, discountLevel);
 //    }

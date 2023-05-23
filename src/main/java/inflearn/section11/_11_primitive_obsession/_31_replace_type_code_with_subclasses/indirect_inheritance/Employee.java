@@ -1,6 +1,5 @@
 package inflearn.section11._11_primitive_obsession._31_replace_type_code_with_subclasses.indirect_inheritance;
 
-import java.util.List;
 
 /**
  * 이미 employee 를 통한 상속구조를 사용중일때는 어떻게?

@@ -3,6 +3,7 @@ package inflearn.section11._11_primitive_obsession._31_replace_type_code_with_su
 import java.util.List;
 
 /**
+ *
  * 타입 코드를 서브클래스로 변경하기
  *
  * 비슷하지만 다른 것들을 표기해야 하는경우, 문자열,열거형,숫자등으로 표현하기도한다.

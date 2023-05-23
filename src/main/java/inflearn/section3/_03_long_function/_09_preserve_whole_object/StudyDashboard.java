@@ -22,7 +22,8 @@ import java.util.concurrent.Executors;
  * 대신 아래처럼 고쳤다면 고민을 해봐야한다
  *
  * 각 매서드들이 participants 에 의존하는게맞는가?
- * 예를들어) 기존에 있던 Map 같은것들에 의존하는데맞는지 (getRate 같은 매서드)
+ * 예를들어)
+ * 기존에 있던 Map 같은것들에 의존하는데맞는지 (getRate 같은 매서드)
  * 그리고 이 participants 를 다른 도메인에도 적용할것인지?
  *
  * (
