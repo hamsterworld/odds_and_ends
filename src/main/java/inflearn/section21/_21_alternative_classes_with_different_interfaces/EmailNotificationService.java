@@ -4,6 +4,10 @@ public class EmailNotificationService implements NotificationService{
 
     private EmailService emailService;
 
+    public EmailNotificationService(EmailService emailService) {
+        this.emailService = emailService;
+    }
+
     @Override
     public void sendNotification(Notification notification) {
         EmailMessage emailMessage = new EmailMessage();

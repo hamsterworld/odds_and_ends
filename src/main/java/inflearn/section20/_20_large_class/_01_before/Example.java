@@ -8,7 +8,6 @@ package inflearn.section20._20_large_class._01_before;
  * 클라이언트가 해당 클래스가 제공하는 기중에 일부만 사용한다면 각각의 세부 기능을 별도의 클래스로 분리할수있다.
  *
  * 클래스 내부에 산재하는 중복코드는 메소드를 추출하여 제거할수있다.
- *
  */
 public class Example {
 }

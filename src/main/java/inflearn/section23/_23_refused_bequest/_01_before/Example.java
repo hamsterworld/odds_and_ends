@@ -8,7 +8,6 @@ package inflearn.section23._23_refused_bequest._01_before;
  * 서브클래스가 슈퍼클래스의 기능을 재사용하고 싶지만 인터페이스를 따르고 싶지 않은 경우에는
  * 슈퍼클래스 또는 서브클래스를 위임으로 교체하기 리팩토링을 적용할수있다.
  *
- *
  */
 public class Example {
 }

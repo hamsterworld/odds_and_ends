@@ -7,7 +7,6 @@ package inflearn.section21._21_alternative_classes_with_different_interfaces._01
  *
  *  대안클래스로 사용하려면 동일한 인터페이스를 구현하고있어야한다.
  *
- *
  */
 public class Example {
 }
